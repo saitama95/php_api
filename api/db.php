@@ -16,6 +16,11 @@ try {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]
     );
+
+     echo json_encode([
+        "status" => true,
+        "message" => "Database connection completed"
+    ]);
 } catch (PDOException $e) {
     http_response_code(500);
     echo json_encode([
